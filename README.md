@@ -28,6 +28,17 @@ The first notebook performs the data ingestion process:
 - Upload the raw dataset to Amazon S3
 - Verify the upload
 
+### 02_feature_engineering.ipynb
+
+The second notebook performs feature engineering and Feature Store integration:
+
+- Load the raw dataset from Amazon S3
+- Perform data profiling
+- Apply preprocessing and feature engineering
+- Create a SageMaker Feature Store feature group
+- Store engineered features in SageMaker Feature Store
+- Save the processed dataset to Amazon S3
+
 ## Running the Project
 
 The project is designed to run in AWS SageMaker Studio.
