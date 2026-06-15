@@ -1,9 +1,8 @@
 # AWS SageMaker Showcase
 
-This project is intended as a hands-on learning and showcase project for the complete machine learning lifecycle on AWS SageMaker, from data ingestion
-to deployment and monitoring.
+This project is intended as a hands-on learning and showcase project for the complete machine learning lifecycle on AWS SageMaker, from data ingestion to deployment and monitoring.
 
-The project uses the credit-g dataset from OpenML and implements a credit-risk classification workflow with XGBoost.
+The project uses the credit-g dataset from OpenML and implements a credit risk classification workflow using XGBoost.
 
 The objective is to predict whether a credit application is likely to be approved based on the available customer and financial information.
 

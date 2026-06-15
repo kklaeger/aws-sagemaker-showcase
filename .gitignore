@@ -24,3 +24,6 @@ outputs/
 
 # Environment variables
 .env
+
+# Local notes
+local-notes.txt
