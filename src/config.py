@@ -13,6 +13,9 @@ BUCKET_NAME = "aws-sagemaker-showcase"
 
 RAW_DATA_KEY = "raw/german_credit.csv"
 PROCESSED_DATA_KEY = "processed/german_credit_processed.csv"
+TRAIN_DATA_KEY = "datasets/german_credit_train.csv"
+VALIDATION_DATA_KEY = "datasets/german_credit_validation.csv"
+TEST_DATA_KEY = "datasets/german_credit_test.csv"
 
 # Feature Store
 FEATURE_GROUP_NAME = "credit-risk-features"

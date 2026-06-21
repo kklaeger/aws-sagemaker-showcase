@@ -64,7 +64,8 @@ The second notebook performs feature engineering and Feature Store integration:
 - Encode categorical features
 - Create a SageMaker Feature Store feature group
 - Store engineered features in SageMaker Feature Store
-- Save the processed dataset to Amazon S3
+- Split the data into training, validation, and test sets
+- Save the processed and the split datasets to Amazon S3
 
 ### 03_training_and_experiments.ipynb
 
@@ -72,7 +73,6 @@ The third notebook performs model training and experiment tracking:
 
 - Load the processed dataset from Amazon S3
 - Inspect the processed dataset
-- Split the data into training, validation, and test sets
 - Train a baseline XGBoost model
 - Evaluate model performance
 - Track experiments using MLflow
