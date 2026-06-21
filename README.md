@@ -17,6 +17,30 @@ This project is currently a work in progress and is being built incrementally wh
 - Explore SageMaker services and MLOps concepts
 - Create a structured project that can be extended over time
 
+## Project Structure
+
+```text
+aws-sagemaker-showcase/
+│
+├── notebooks/
+│   ├── 01_data_ingestion.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   └── 03_training_and_experiments.ipynb
+│
+├── src/
+│   ├── config.py
+│   ├── preprocess_simplified.py
+│   ├── train.py
+│   └── evaluate.py
+│
+├── requirements.txt
+├── README.md
+└── LICENSE
+```
+
+The notebooks demonstrate the end-to-end SageMaker workflow, while the src directory contains reusable preprocessing, training, and evaluation utilities.
+
+
 ## Project Overview
 
 ### 01_data_ingestion.ipynb
