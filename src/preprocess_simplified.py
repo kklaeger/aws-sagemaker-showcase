@@ -1,4 +1,5 @@
-"""Preprocessing utilities for the AWS SageMaker Showcase project.
+"""
+Preprocessing utilities for the AWS SageMaker Showcase project.
 
 This module contains a small, readable version of the feature-engineering
 logic that was originally prototyped in SageMaker Data Wrangler.
