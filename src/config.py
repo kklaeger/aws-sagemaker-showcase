@@ -25,10 +25,12 @@ FEATURE_STORE_S3_URI = f"s3://{BUCKET_NAME}/feature-store/"
 TARGET_COLUMN = "class"
 
 # MLflow
+MLFLOW_TRACKING_SERVER_NAME = "aws-sagemaker-showcase-mlflow"
 MLFLOW_TRACKING_SERVER_ARN = (
     "arn:aws:sagemaker:eu-central-1:591874026136:"
     "mlflow-tracking-server/aws-sagemaker-showcase-mlflow"
 )
+MLFLOW_EXPERIMENT_NAME = "german-credit-risk-xgboost"
 
 # Model Artifacts
 MODEL_ARTIFACT_NAME = "best_model.pkl"

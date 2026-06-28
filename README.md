@@ -17,6 +17,15 @@ This project is currently a work in progress and is being built incrementally wh
 - Explore SageMaker services and MLOps concepts
 - Create a structured project that can be extended over time
 
+## Prerequisites
+
+Before running the notebooks, the following resources are required:
+
+- An AWS account with access to Amazon SageMaker Studio
+- An S3 bucket for project artifacts and datasets
+- A SageMaker execution role with permissions for SageMaker, S3, IAM, and MLflow
+- A SageMaker MLflow Tracking Server for experiment tracking
+
 ## Project Structure
 
 ```text
