@@ -26,7 +26,8 @@ aws-sagemaker-showcase/
 │   ├── 01_data_ingestion.ipynb
 │   ├── 02_feature_engineering.ipynb
 │   ├── 03_training_and_experiments.ipynb
-│   └── 04_model_creation.ipynb
+│   ├── 04_model_creation.ipynb
+│   └── 05_clarify.ipynb
 │
 ├── src/
 │   ├── config.py
@@ -99,6 +100,19 @@ The fourth notebook prepares the locally trained XGBoost model for SageMaker inf
 - Delete the temporary endpoint and endpoint configuration
 - Store model metadata for the next workflow step
 
+### 05_clarify.ipynb
+
+The fifth notebook performs responsible AI analysis with SageMaker Clarify:
+
+- Load the SageMaker Model metadata from Amazon S3
+- Prepare a Clarify input dataset from the test dataset
+- Create a Clarify analysis configuration
+- Run a SageMaker Clarify Processing Job
+- Generate bias and explainability results
+- Review global SHAP feature importance values
+- Review post-training bias metrics for the configured age facet
+- Store Clarify outputs and metadata in Amazon S3
+
 ## AWS Services Used
 
 - Amazon SageMaker Studio
@@ -106,6 +120,8 @@ The fourth notebook prepares the locally trained XGBoost model for SageMaker inf
 - Amazon SageMaker MLflow
 - Amazon SageMaker Model
 - Amazon SageMaker Real-Time Inference
+- Amazon SageMaker Clarify
+- Amazon SageMaker Processing Jobs
 - Amazon S3
 - AWS IAM
 
@@ -120,6 +136,12 @@ pip install -r requirements.txt
 ```
 
 Follow the instructions provided in each notebook.
+
+## Responsible AI Scope
+
+SageMaker Clarify is used to perform an exploratory responsible AI analysis on a small sample of the test dataset.
+
+The Clarify workflow generates global SHAP feature importance values and post-training bias metrics for a configured age facet. The results are intended to demonstrate responsible AI concepts and should not be interpreted as a final fairness assessment or as a production-ready credit decisioning system.
 
 ## License
 

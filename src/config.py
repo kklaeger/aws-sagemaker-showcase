@@ -58,3 +58,23 @@ XGBOOST_IMAGE_URI = (
     f"492215442770.dkr.ecr.{AWS_REGION}.amazonaws.com/"
     "sagemaker-xgboost:1.7-1"
 )
+
+# SageMaker Clarify
+CLARIFY_FACET_NAME = "age"
+CLARIFY_FACET_THRESHOLD = 25
+
+CLARIFY_PROCESSING_INSTANCE_TYPE = "ml.t3.medium"
+CLARIFY_PROCESSING_VOLUME_SIZE_GB = 20
+CLARIFY_MAX_RUNTIME_SECONDS = 3600
+
+CLARIFY_INPUT_KEY = "clarify/input/clarify_input.csv"
+CLARIFY_ANALYSIS_CONFIG_KEY = "clarify/config/analysis_config.json"
+CLARIFY_OUTPUT_PREFIX = "clarify/output"
+
+CLARIFY_JOB_NAME_PREFIX = "german-credit-clarify"
+CLARIFY_SAMPLE_SIZE = 100
+
+CLARIFY_IMAGE_URI = (
+    f"017069133835.dkr.ecr.{AWS_REGION}.amazonaws.com/"
+    "sagemaker-clarify-processing:1.0"
+)
