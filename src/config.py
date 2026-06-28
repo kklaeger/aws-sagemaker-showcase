@@ -46,6 +46,12 @@ SAGEMAKER_MODEL_METADATA_KEY = (
 
 EVALUATION_REPORT_NAME = "evaluation.json"
 EVALUATION_REPORT_KEY = f"evaluation/{EVALUATION_REPORT_NAME}"
+ECALUATION_REPORT_S3_URI = f"s3://{BUCKET_NAME}/{EVALUATION_REPORT_KEY}"
+
+EVALUATION_METADATA_NAME = "evaluation_metadata.json"
+EVALUATION_METADATA_KEY = f"evaluation/{EVALUATION_METADATA_NAME}"
+
+EVALUATION_VERSIONED_PREFIX = "evaluation/runs"
 
 # SageMaker Model Creation
 SAGEMAKER_MODEL_NAME_PREFIX = "german-credit-xgboost-model"
@@ -78,3 +84,16 @@ CLARIFY_IMAGE_URI = (
     f"017069133835.dkr.ecr.{AWS_REGION}.amazonaws.com/"
     "sagemaker-clarify-processing:1.0"
 )
+
+# SageMaker Model Registry
+MODEL_PACKAGE_GROUP_NAME = "german-credit-risk-xgboost"
+MODEL_PACKAGE_GROUP_DESCRIPTION = (
+    "Model package group for the German Credit Risk XGBoost model."
+)
+
+MODEL_APPROVAL_STATUS = "PendingManualApproval"
+
+MODEL_REGISTRY_METADATA_NAME = "model_registry_metadata.json"
+MODEL_REGISTRY_METADATA_KEY = f"models/registry/{MODEL_REGISTRY_METADATA_NAME}"
+
+CLARIFY_METADATA_PREFIX = "clarify/metadata/"

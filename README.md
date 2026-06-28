@@ -27,7 +27,8 @@ aws-sagemaker-showcase/
 │   ├── 02_feature_engineering.ipynb
 │   ├── 03_training_and_experiments.ipynb
 │   ├── 04_model_creation.ipynb
-│   └── 05_clarify.ipynb
+│   ├── 05_clarify.ipynb
+│   └── 06_model_registry.ipynb
 │
 ├── src/
 │   ├── config.py
@@ -113,6 +114,20 @@ The fifth notebook performs responsible AI analysis with SageMaker Clarify:
 - Review post-training bias metrics for the configured age facet
 - Store Clarify outputs and metadata in Amazon S3
 
+### 06_model_registry.ipynb
+
+The sixth notebook registers the model in the SageMaker Model Registry:
+
+- Load SageMaker model metadata from Amazon S3
+- Load the evaluation report from Amazon S3
+- Load the latest Clarify metadata and analysis result
+- Create or reuse a SageMaker Model Package Group
+- Register a new Model Package Version
+- Attach model quality, bias, and explainability metadata
+- Review the registered model package
+- Approve the model package for deployment
+- Store registry metadata for the deployment workflow
+
 ## AWS Services Used
 
 - Amazon SageMaker Studio
@@ -122,8 +137,15 @@ The fifth notebook performs responsible AI analysis with SageMaker Clarify:
 - Amazon SageMaker Real-Time Inference
 - Amazon SageMaker Clarify
 - Amazon SageMaker Processing Jobs
+- Amazon SageMaker Model Registry
 - Amazon S3
 - AWS IAM
+
+## Model Registry Scope
+
+SageMaker Model Registry is used to register the SageMaker-compatible XGBoost model as a versioned model package.
+
+The registered model package references the model artifact, evaluation report, and Clarify analysis results. The model is first registered for review and then approved for deployment in the next workflow step.
 
 ## Running the Project
 
@@ -135,7 +157,14 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Follow the instructions provided in each notebook.
+Follow the notebooks in order:
+
+1. `01_data_ingestion.ipynb`
+2. `02_feature_engineering.ipynb`
+3. `03_training_and_experiments.ipynb`
+4. `04_model_creation.ipynb`
+5. `05_clarify.ipynb`
+6. `06_model_registry.ipynb`
 
 ## Responsible AI Scope
 
