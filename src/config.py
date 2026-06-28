@@ -34,5 +34,27 @@ MLFLOW_TRACKING_SERVER_ARN = (
 MODEL_ARTIFACT_NAME = "best_model.pkl"
 MODEL_ARTIFACT_KEY = f"models/{MODEL_ARTIFACT_NAME}"
 
+SAGEMAKER_MODEL_ARTIFACT_NAME = "model.tar.gz"
+SAGEMAKER_MODEL_ARTIFACT_KEY = (
+    f"models/sagemaker/xgboost/{SAGEMAKER_MODEL_ARTIFACT_NAME}"
+)
+
+SAGEMAKER_MODEL_METADATA_NAME = "model_metadata.json"
+SAGEMAKER_MODEL_METADATA_KEY = (
+    f"models/sagemaker/xgboost/{SAGEMAKER_MODEL_METADATA_NAME}"
+)
+
 EVALUATION_REPORT_NAME = "evaluation.json"
 EVALUATION_REPORT_KEY = f"evaluation/{EVALUATION_REPORT_NAME}"
+
+# SageMaker Model Creation
+SAGEMAKER_MODEL_NAME_PREFIX = "german-credit-xgboost-model"
+ENDPOINT_CONFIG_NAME_PREFIX = "german-credit-xgboost-endpoint-config"
+TEMP_ENDPOINT_NAME_PREFIX = "german-credit-xgboost-test-endpoint"
+
+INFERENCE_INSTANCE_TYPE = "ml.m5.large"
+
+XGBOOST_IMAGE_URI = (
+    f"492215442770.dkr.ecr.{AWS_REGION}.amazonaws.com/"
+    "sagemaker-xgboost:1.7-1"
+)

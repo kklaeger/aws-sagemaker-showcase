@@ -6,7 +6,7 @@ The project uses the credit-g dataset from OpenML and implements a credit risk c
 
 The objective is to predict whether a credit application is likely to be approved based on the available customer and financial information.
 
-The workflow currently covers data ingestion, feature engineering, experiment tracking with MLflow, model training, and model evaluation.
+The workflow currently covers data ingestion, feature engineering, experiment tracking with MLflow, model training, model evaluation, and SageMaker model creation for inference.
 
 This project is currently a work in progress and is being built incrementally while exploring the AWS SageMaker ecosystem.
 
@@ -25,7 +25,8 @@ aws-sagemaker-showcase/
 ├── notebooks/
 │   ├── 01_data_ingestion.ipynb
 │   ├── 02_feature_engineering.ipynb
-│   └── 03_training_and_experiments.ipynb
+│   ├── 03_training_and_experiments.ipynb
+│   └── 04_model_creation.ipynb
 │
 ├── src/
 │   ├── config.py
@@ -82,11 +83,29 @@ The third notebook performs model training and experiment tracking:
 - Save evaluation results to Amazon S3
 - Save the trained model artifact to Amazon S3
 
+### 04_model_creation.ipynb
+
+The fourth notebook prepares the locally trained XGBoost model for SageMaker inference:
+
+- Load the trained model artifact from Amazon S3
+- Convert the trained XGBoost classifier into a Booster model
+- Verify that the converted Booster preserves the prediction behavior
+- Create a SageMaker-compatible `model.tar.gz` artifact
+- Upload the SageMaker model artifact to Amazon S3
+- Create a SageMaker Model using the SageMaker XGBoost inference container
+- Deploy a temporary endpoint for a smoke test
+- Invoke the temporary endpoint with sample test data
+- Compare local and endpoint predictions
+- Delete the temporary endpoint and endpoint configuration
+- Store model metadata for the next workflow step
+
 ## AWS Services Used
 
 - Amazon SageMaker Studio
 - Amazon SageMaker Feature Store
 - Amazon SageMaker MLflow
+- Amazon SageMaker Model
+- Amazon SageMaker Real-Time Inference
 - Amazon S3
 - AWS IAM
 
