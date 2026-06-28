@@ -97,3 +97,8 @@ MODEL_REGISTRY_METADATA_NAME = "model_registry_metadata.json"
 MODEL_REGISTRY_METADATA_KEY = f"models/registry/{MODEL_REGISTRY_METADATA_NAME}"
 
 CLARIFY_METADATA_PREFIX = "clarify/metadata/"
+
+# SageMaker Deployment
+DEPLOYMENT_MODEL_NAME_PREFIX = "german-credit-risk-deployment-model"
+DEPLOYMENT_ENDPOINT_CONFIG_NAME_PREFIX = "german-credit-risk-endpoint-config"
+DEPLOYMENT_ENDPOINT_NAME = "german-credit-risk-endpoint"

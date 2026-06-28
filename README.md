@@ -6,7 +6,7 @@ The project uses the credit-g dataset from OpenML and implements a credit risk c
 
 The objective is to predict whether a credit application is likely to be approved based on the available customer and financial information.
 
-The workflow currently covers data ingestion, feature engineering, experiment tracking with MLflow, model training, model evaluation, and SageMaker model creation for inference.
+The workflow currently covers data ingestion, feature engineering, experiment tracking with MLflow, model training, model evaluation, SageMaker model creation for inference, responsible AI analysis with SageMaker Clarify, model registration with SageMaker Model Registry, and real-time endpoint deployment.
 
 This project is currently a work in progress and is being built incrementally while exploring the AWS SageMaker ecosystem.
 
@@ -28,7 +28,8 @@ aws-sagemaker-showcase/
 │   ├── 03_training_and_experiments.ipynb
 │   ├── 04_model_creation.ipynb
 │   ├── 05_clarify.ipynb
-│   └── 06_model_registry.ipynb
+│   ├── 06_model_registry.ipynb
+│   └── 07_deployment.ipynb
 │
 ├── src/
 │   ├── config.py
@@ -128,6 +129,19 @@ The sixth notebook registers the model in the SageMaker Model Registry:
 - Approve the model package for deployment
 - Store registry metadata for the deployment workflow
 
+### 07_deployment.ipynb
+
+The seventh notebook deploys the approved model package from SageMaker Model Registry:
+
+- Load registry metadata from Amazon S3
+- Verify that the registered model package is approved
+- Create a SageMaker Model from the approved model package
+- Create an endpoint configuration
+- Deploy a SageMaker real-time endpoint
+- Invoke the endpoint with sample test records
+- Review prediction results
+- Delete the endpoint and endpoint configuration to avoid ongoing costs
+
 ## AWS Services Used
 
 - Amazon SageMaker Studio
@@ -140,12 +154,6 @@ The sixth notebook registers the model in the SageMaker Model Registry:
 - Amazon SageMaker Model Registry
 - Amazon S3
 - AWS IAM
-
-## Model Registry Scope
-
-SageMaker Model Registry is used to register the SageMaker-compatible XGBoost model as a versioned model package.
-
-The registered model package references the model artifact, evaluation report, and Clarify analysis results. The model is first registered for review and then approved for deployment in the next workflow step.
 
 ## Running the Project
 
@@ -165,6 +173,7 @@ Follow the notebooks in order:
 4. `04_model_creation.ipynb`
 5. `05_clarify.ipynb`
 6. `06_model_registry.ipynb`
+7. `07_deployment.ipynb`
 
 ## Responsible AI Scope
 
