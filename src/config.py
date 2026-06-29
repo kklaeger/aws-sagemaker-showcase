@@ -104,3 +104,25 @@ CLARIFY_METADATA_PREFIX = "clarify/metadata/"
 DEPLOYMENT_MODEL_NAME_PREFIX = "german-credit-risk-deployment-model"
 DEPLOYMENT_ENDPOINT_CONFIG_NAME_PREFIX = "german-credit-risk-endpoint-config"
 DEPLOYMENT_ENDPOINT_NAME = "german-credit-risk-endpoint"
+
+# SageMaker Pipeline
+PIPELINE_NAME = "credit-risk-processing-pipeline"
+PIPELINE_PREFIX = "pipeline"
+
+RAW_DATA_S3_URI = f"s3://{BUCKET_NAME}/{RAW_DATA_KEY}"
+PIPELINE_PROCESSED_DATA_S3_URI = f"s3://{BUCKET_NAME}/{PIPELINE_PREFIX}/processed"
+
+# Pipeline output prefixes
+PIPELINE_PROCESSED_PREFIX = f"{PIPELINE_PREFIX}/processed"
+PIPELINE_TRAIN_PREFIX = f"{PIPELINE_PROCESSED_PREFIX}/train"
+PIPELINE_VALIDATION_PREFIX = f"{PIPELINE_PROCESSED_PREFIX}/validation"
+PIPELINE_TEST_PREFIX = f"{PIPELINE_PROCESSED_PREFIX}/test"
+
+# Script paths
+PREPROCESSING_SCRIPT_PATH = "../src/preprocess_simplified.py"
+
+# Local processing paths inside SageMaker container
+PROCESSING_INPUT_PATH = "/opt/ml/processing/input"
+PROCESSING_TRAIN_PATH = "/opt/ml/processing/train"
+PROCESSING_VALIDATION_PATH = "/opt/ml/processing/validation"
+PROCESSING_TEST_PATH = "/opt/ml/processing/test"

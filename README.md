@@ -6,7 +6,7 @@ The project uses the credit-g dataset from OpenML and implements a credit risk c
 
 The objective is to predict whether a credit application is likely to be approved based on the available customer and financial information.
 
-The workflow currently covers data ingestion, feature engineering, experiment tracking with MLflow, model training, model evaluation, SageMaker model creation for inference, responsible AI analysis with SageMaker Clarify, model registration with SageMaker Model Registry, and real-time endpoint deployment.
+The workflow currently covers data ingestion, data processing and feature engineering, experiment tracking with MLflow, model training, model evaluation, SageMaker Pipelines for workflow automation, SageMaker model creation for inference, responsible AI analysis with SageMaker Clarify, model registration with SageMaker Model Registry, and real-time endpoint deployment.
 
 This project is currently a work in progress and is being built incrementally while exploring the AWS SageMaker ecosystem.
 
@@ -15,6 +15,7 @@ This project is currently a work in progress and is being built incrementally wh
 - Demonstrate the AWS SageMaker workflow
 - Build an end-to-end machine learning solution on AWS
 - Explore SageMaker services and MLOps concepts
+- Demonstrate SageMaker Pipelines for automated and reproducible ML workflows
 - Create a structured project that can be extended over time
 
 ## Prerequisites
@@ -23,7 +24,7 @@ Before running the notebooks, the following resources are required:
 
 - An AWS account with access to Amazon SageMaker Studio
 - An S3 bucket for project artifacts and datasets
-- A SageMaker execution role with permissions for SageMaker, S3, IAM, and MLflow
+- A SageMaker execution role with permissions for SageMaker, SageMaker Pipelines, SageMaker Processing Jobs, S3, IAM, and MLflow
 - A SageMaker MLflow Tracking Server for experiment tracking
 
 ## Project Structure
@@ -38,7 +39,8 @@ aws-sagemaker-showcase/
 │   ├── 04_model_creation.ipynb
 │   ├── 05_clarify.ipynb
 │   ├── 06_model_registry.ipynb
-│   └── 07_deployment.ipynb
+│   ├── 07_deployment.ipynb
+│   └── 08_pipeline.ipynb
 │
 ├── src/
 │   ├── config.py
@@ -151,6 +153,20 @@ The seventh notebook deploys the approved model package from SageMaker Model Reg
 - Review prediction results
 - Delete the endpoint and endpoint configuration to avoid ongoing costs
 
+### 08_sagemaker_pipeline.ipynb
+
+The eighth notebook demonstrates SageMaker Pipelines by converting the data processing workflow into a managed pipeline step:
+
+- Define reusable pipeline parameters
+- Configure a SageMaker Processing job
+- Run the preprocessing script as a SageMaker ProcessingStep
+- Create train, validation, and test datasets inside the pipeline
+- Store pipeline-generated artifacts in Amazon S3
+- Review the pipeline definition
+- Create or update the SageMaker Pipeline
+- Start a pipeline execution
+- Verify the generated pipeline outputs in Amazon S3
+
 ## AWS Services Used
 
 - Amazon SageMaker Studio
@@ -161,6 +177,7 @@ The seventh notebook deploys the approved model package from SageMaker Model Reg
 - Amazon SageMaker Clarify
 - Amazon SageMaker Processing Jobs
 - Amazon SageMaker Model Registry
+- Amazon SageMaker Pipelines
 - Amazon S3
 - AWS IAM
 
@@ -183,6 +200,8 @@ Follow the notebooks in order:
 5. `05_clarify.ipynb`
 6. `06_model_registry.ipynb`
 7. `07_deployment.ipynb`
+
+Or use the notebook `08_pipeline.ipynb`.
 
 ## Responsible AI Scope
 
