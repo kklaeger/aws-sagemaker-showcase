@@ -15,7 +15,6 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-
 TARGET_COLUMN = "class"
 
 # Columns that are treated as categorical in the German credit dataset.

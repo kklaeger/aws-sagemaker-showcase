@@ -120,6 +120,8 @@ PIPELINE_TEST_PREFIX = f"{PIPELINE_PROCESSED_PREFIX}/test"
 
 # Script paths
 PREPROCESSING_SCRIPT_PATH = "../src/preprocess_simplified.py"
+TRAINING_SCRIPT_PATH = "../src/train.py"
+EVALUATION_SCRIPT_PATH = "../src/evaluate.py"
 
 # Local processing paths inside SageMaker container
 PROCESSING_INPUT_PATH = "/opt/ml/processing/input"
